@@ -51,6 +51,12 @@ Dentro da pasta Threeo executar o comando "docker-compose up --build"
         Usuário: user1
         Senha: senha1
 
+        Usuário: user2
+        Senha: senha2
+
+        Usuário: user3
+        Senha: senha3
+
 ## **Cálculos: Após o login, você pode realizar cálculos utilizando os campos de entrada de valores e seleção da operação. O resultado será exibido na tela.**
 
 
