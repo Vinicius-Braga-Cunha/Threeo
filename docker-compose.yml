@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  flask-app-service:
+    build: ./backend/app
+    volumes:
+      - ./backend/app:/app
+    ports:
+      - "44665:5000"  # Mapeando a porta 5000 para 44665 na máquina host
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend/  # Corrigido para apontar para o caminho correto
+    ports:
+      - "4200:4200"  # Mapeando a porta 4200 do Angular
+    depends_on:
+      - flask-app-service  # Garantir que o backend esteja disponível
+    networks:
+      - app-network
+    command: ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]  # Comando correto para iniciar o Angular
+
+networks:
+  app-network:
+    driver: bridge
