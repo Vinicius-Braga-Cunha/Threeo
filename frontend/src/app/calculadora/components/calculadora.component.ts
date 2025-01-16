@@ -90,6 +90,7 @@ export class CalculadoraComponent implements OnInit {
     ).then(result => {
       this.resultado = result;
       this.numero1 = this.resultado.toString();
+      this.resultado = null;
       this.numero2 = null;
       this.operacao = null;
     });

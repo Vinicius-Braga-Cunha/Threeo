@@ -23,6 +23,8 @@ def operacao(data):
         case '*':
             return int(data['num1'])*int(data['num2'])
         case '/':
+            if(data['num2'] == 0 or data['num1'] == 0):
+                return 0
             return float(("{0:.2f}".format(float(data['num1'])/float(data['num2']))))
         case _:     
             return "N/A";           
