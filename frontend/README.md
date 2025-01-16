@@ -1,27 +1,38 @@
-# Calculadora
+Projeto: Calculadora com Backend em Python Flask e Frontend em Angular 13
+Descrição
+Este é um projeto de uma calculadora web que realiza operações matemáticas básicas (soma, subtração, multiplicação e divisão). Ele foi desenvolvido utilizando Python com a biblioteca Flask para o backend e Angular 13 para o frontend, com integração via API. O projeto está configurado para ser executado usando Docker.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+Funcionalidades
+Operações matemáticas básicas (soma, subtração, multiplicação, divisão).
+Validação para divisão por zero.
+Interface de usuário responsiva e estilizada.
+Backend com autenticação via token JWT.
+Credenciais padrão para acesso:
+Usuário: user1 | Senha: senha1
+Usuário: user2 | Senha: senha2
+Usuário: user3 | Senha: senha3
+Tecnologias utilizadas
+Frontend: Angular 13
+Backend: Python (Flask)
+Estilização: CSS (Com BootStrap)
+Docker: Para ambiente de execução containerizado
+JWT: Para autenticação de requisições
+Pré-requisitos
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
-## Development server
+Node.js (versão LTS recomendada)
+Docker
+Git
+Instalação e execução
+1. Clonando o repositório
+git clone [https://github.com/Vinicius-Braga-Cunha/Threeo]
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Dentro da pasta Threeo executar o comando "docker-compose up --build"
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Como Testar
+**1. Acesse o Frontend: O frontend estará disponível em http://localhost:4200 **
+**2. Login: Utilize um dos seguintes usuários para autenticação: **
+User:
+    Usuário: user1
+    Senha: senha1
+Cálculos: Após o login, você pode realizar cálculos utilizando os campos de entrada de valores e seleção da operação. O resultado será exibido na tela.
