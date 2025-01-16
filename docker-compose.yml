@@ -6,23 +6,28 @@ services:
     volumes:
       - ./backend/app:/app
     ports:
-      - "44665:5000"  # Mapeando a porta 5000 para 44665 na máquina host
+      - "44665:5000"
     environment:
       - PYTHONUNBUFFERED=1
     networks:
-      - app-network
+      app-network:
+        ipv4_address: 172.28.32.10  # IP fixo para o container backend
 
   frontend:
     build:
-      context: ./frontend/  # Corrigido para apontar para o caminho correto
+      context: ./frontend/
     ports:
-      - "4200:4200"  # Mapeando a porta 4200 do Angular
+      - "4200:4200"
     depends_on:
-      - flask-app-service  # Garantir que o backend esteja disponível
+      - flask-app-service
     networks:
       - app-network
-    command: ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]  # Comando correto para iniciar o Angular
+    command: ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]
 
 networks:
   app-network:
     driver: bridge
+    ipam:
+      config:
+        - subnet: "172.28.32.0/24"  # Definindo a faixa de IPs
+          gateway: "172.28.32.1"    # Definindo o gateway para a rede
