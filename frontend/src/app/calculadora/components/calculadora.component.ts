@@ -32,10 +32,19 @@ export class CalculadoraComponent implements OnInit {
   }
 
   adicionarNumero(numero: string): void {
-    if (this.operacao === null) {
+    if ( this.numero1 !== "Não é possível dividir por zero") {
+
+
+      if(this.operacao === null){
+        this.numero1 = this.concatenarNumero(this.numero1, numero);
+      }
+      else {
+        this.numero2 = this.concatenarNumero(this.numero2, numero);
+      }
+    }
+    else{
+      this.limpar();
       this.numero1 = this.concatenarNumero(this.numero1, numero);
-    } else {
-      this.numero2 = this.concatenarNumero(this.numero2, numero);
     }
   }
 
@@ -60,7 +69,10 @@ export class CalculadoraComponent implements OnInit {
       this.operacao = operacao;
       return;
     }
-
+    else{
+      this.operacao = operacao;
+    }
+   /*
     if (this.numero2 !== null) {
       this.calculadoraService.calcular(
         this.operacao,
@@ -74,7 +86,7 @@ export class CalculadoraComponent implements OnInit {
         this.numero2 = null;
         this.resultado = null;
       });
-    }
+    }*/
   }
 
   calcular(): void {
@@ -104,5 +116,8 @@ export class CalculadoraComponent implements OnInit {
   }
   get display2(): string {
     return this.numero2;
+  }
+  get display3(): string {
+    return this.operacao;
   }
 }

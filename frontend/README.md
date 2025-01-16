@@ -20,9 +20,13 @@ JWT: Para autenticação de requisições
 Pré-requisitos
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
-Node.js (versão LTS recomendada)
-Docker
+Node.js (Versão 18.20.5)
+NPM (Versão 10.8.2)
+Docker (Versão utilizada 27.3.1)
+Docker-compose (Versão 2.30.3 Necessária para execução dos comando "docker-compose build", "docker-compose up") 
 Git
+
+
 Instalação e execução
 1. Clonando o repositório
 git clone [https://github.com/Vinicius-Braga-Cunha/Threeo]
