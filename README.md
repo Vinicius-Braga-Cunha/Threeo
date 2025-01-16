@@ -40,7 +40,8 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 ### **1. Clonando o repositório**
 
 git clone [https://github.com/Vinicius-Braga-Cunha/Threeo]
-dentro da pasta Threeo executar o comando "docker-compose up --build"
+
+Dentro da pasta Threeo executar o comando "docker-compose up --build"
 
 ## **Como Testar**
 
